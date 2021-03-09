@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import HomeInfo from "./HomeInfo";
 import Learn from "./Learn";
-import logo from "./logo.svg";
 import Reviews from "./Reviews";
 
 function App() {

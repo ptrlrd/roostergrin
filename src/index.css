@@ -110,9 +110,15 @@ a {
   display: flex;
   flex-direction: column;
   align-content: center;
-  text-align: center;
+  text-align: left;
   margin: auto;
   flex: 1;
+  padding-left: 10%;
+  padding-right: 5%;
+}
+
+.learnInfo p {
+  padding-left: 0;
 }
 
 .learnImg {
@@ -147,9 +153,10 @@ a {
   flex-direction: column;
   padding-left: 1em;
   min-height: 40vh;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   margin: auto;
+  text-align: left;
 }
 
 .homeImages {
@@ -260,11 +267,12 @@ a {
 
 .mainReview {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .reviewCarousel {
@@ -276,8 +284,10 @@ a {
 }
 
 .reviewCarousel p {
+  display: flex;
   margin-top: 0;
-  width: 60%;
+  padding-right: 2em;
+  padding-left: 2em;
   align-items: center;
   justify-content: center;
 }
@@ -291,20 +301,55 @@ a {
 
 .rightArrow {
   position: absolute;
-  left: 85%;
+  left: 95%;
   z-index: 5;
   cursor: pointer;
 }
 
 .leftArrow {
   position: absolute;
-  right: 85%;
+  right: 95%;
   z-index: 5;
   cursor: pointer;
 }
 
 .mainReview h1 {
   color: black;
+}
+
+.reviewStars {
+  color: orange;
+}
+
+/*Dynamic images underneath reviews*/
+.pointer {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.pointer span {
+  display: flex;
+  color: red;
+  height: 20px;
+  width: 20px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.pointer span::before {
+  border-radius: 50%;
+  display: flex;
+  content: "";
+  height: 6px;
+  width: 6px;
+  background-color: orange;
+  transition: background-color 0.3 ease;
+}
+
+.pointer span:hover::before {
+  background-color: #45454d;
 }
 
 /* Footer */
@@ -408,8 +453,10 @@ footer .p {
     display: flex;
     padding-left: 2em;
     padding-right: 1.5em;
-    align-items: center;
+    align-items: left;
     justify-content: center;
+    padding-left: 10%;
+    padding-right: 5%;
   }
 
   .homeImages {
@@ -450,6 +497,9 @@ footer .p {
     margin-top: -170px;
     text-align: center;
     min-width: 200px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 100px;
   }
 
   .rightArrow {

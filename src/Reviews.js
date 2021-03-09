@@ -1,6 +1,10 @@
 // import Carousel from "./Carousel";
 import { useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import {
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
+  RiStarFill,
+} from "react-icons/ri";
 
 const reviews = {
   0: {
@@ -38,20 +42,39 @@ const reviews = {
 
 const Reviews = () => {
   const [active, setActive] = useState(0);
+  const [review, setReview] = useState(reviews[0]);
 
   const prevReview = () => {
-    setActive(active === 4 - 1 ? 0 : active + 1);
+    setActive(active === 5 - 1 ? 0 : active + 1);
+    console.log(active);
   };
 
   const nextReview = () => {
-    setActive(active === 0 ? 4 - 1 : active - 1);
+    setActive(active === 0 ? 5 - 1 : active - 1);
+    console.log(active);
+  };
+
+  const handleSetClick = (event) => {
+    setReview(reviews[event.target.getAttribute("data-review")]);
+    console.log(reviews[event.target.getAttribute("data-review")]);
+    setActive(event.target.getAttribute("data-review"));
+    console.log(event.target.getAttribute("data-review"));
   };
 
   return (
     <div className="reviewContainer">
       <div className="mainReview">
-        <h1>LOREM IPSUM DOLOR SIT AMET</h1>
-        <p>⭐⭐⭐⭐⭐</p>
+        <h1>
+          LOREM IPSUM <br />
+          DOLOR SIT AMET
+        </h1>
+        <p>
+          <RiStarFill className="reviewStars" />
+          <RiStarFill className="reviewStars" />
+          <RiStarFill className="reviewStars" />
+          <RiStarFill className="reviewStars" />
+          <RiStarFill className="reviewStars" />
+        </p>
       </div>
       <div className="reviewCarousel">
         <RiArrowLeftSLine onClick={prevReview} className="leftArrow" />
@@ -60,6 +83,16 @@ const Reviews = () => {
         </h3>
         <p>{reviews[active].review}</p>
         <RiArrowRightSLine onClick={nextReview} className="rightArrow" />
+        <div className="pointer">
+          {/* Dynamically inserts circles underneath reviews based off of total befores */}
+          {Object.keys(reviews).map((index) => (
+            <span
+              onClick={(event) => handleSetClick(event)}
+              data-review={index}
+              key={index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
