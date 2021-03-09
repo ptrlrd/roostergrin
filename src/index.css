@@ -1,13 +1,470 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  color: purple;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+  font-weight: 900;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CSS for Hero Section*/
+
+.logo {
+  height: 1em;
+  padding-left: 0.5em;
+  padding-top: 0.75em;
+}
+
+.heroContainer {
+  background-image: url(./images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 2.5s;
+  -moz-animation: fadeIn ease 2.5s;
+  -o-animation: fadeIn ease 2.5s;
+  -ms-animation: fadeIn ease 2.5s;
+}
+
+@keyframes fadeIn {
+  /* Animation for going from 0% capacity to 100% capacity*/
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cta {
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.welcome {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-size: 1em;
+}
+
+.brand {
+  color: white;
+  letter-spacing: 0.25em;
+  font-size: 0.85em;
+}
+
+.heroBtn {
+  margin-top: 1.5em;
+  background-color: #ac5fd1;
+  padding: 15px 32px;
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* CSS for Learning Component*/
+
+.learnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 70vh;
+}
+
+.learnContainer p {
+  padding-left: 1em;
+}
+
+.learnInfo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  flex: 1;
+}
+
+.learnImg {
+  display: none;
+}
+
+/* CSS for Banner One Component */
+.bannerOneContainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url(./images/banner-1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerOneContainer .btn {
+  margin-top: 5%;
+}
+
+/* CSS for Home Component */
+.homeContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homeInfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  min-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.homeImages {
+  display: flex;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.homeList {
+  display: grid;
+  grid-template: 8em / repeat(4, 1.5fr);
+  grid-gap: 0.25em;
+  grid-row-gap: 0.25em;
+  list-style-type: none;
+  background: #fafafa;
+  padding: 85px 0 25px 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.homeIcons {
+  /* Grid of Icons in Home Info section */
+  border: 1px solid purple;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  justify-content: center;
+}
+
+.homeIcons figure {
+  margin: auto;
+  padding-top: 1em;
+}
+
+.homeList img {
+  height: 40px;
+  width: 40px;
+  margin-top: 10%;
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -o-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+/*Rotates list images in almost a full circle*/
+.homeList img:hover {
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transform: rotate(350deg);
+  -moz-transform: rotate(350deg);
+  -o-transform: rotate(350deg);
+  -ms-transform: rotate(350deg);
+  transform: rotate(350deg);
+}
+
+.img.icon {
+  display: inline-table;
+  margin: 0.25em;
+}
+
+.homeList li {
+  text-align: center;
+  justify-self: center;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+/* CSS for Banner Two Component*/
+.bannerTwoContainer {
+  display: flex;
+  background-image: url(./images/banner-2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 75vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerTwoComponents {
+  padding-left: 10em;
+}
+
+.bannerBtn {
+  margin-left: 1.25em;
+}
+
+/*CSS for Reviews Component*/
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 45vh;
+  width: 100%;
+}
+
+.mainReview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+}
+
+.reviewCarousel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+}
+
+.reviewCarousel p {
+  margin-top: 0;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewName {
+  display: flex;
+  text-align: center;
+  color: purple;
+  width: 50%;
+}
+
+.rightArrow {
+  position: absolute;
+  left: 85%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.leftArrow {
+  position: absolute;
+  right: 85%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.mainReview h1 {
+  color: black;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  width: 100%;
+  background-color: lightgrey;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 10em;
+}
+
+footer img {
+  width: 35px;
+  height: 35px;
+  margin: auto;
+  filter: invert(14%) sepia(48%) saturate(5765%) hue-rotate(289deg)
+    brightness(84%) contrast(118%);
+}
+
+footer .p {
+  text-align: center;
+}
+
+.socialFB {
+  padding-left: 15px;
+}
+
+/*Universal CSS*/
+.btn {
+  /*Universal button*/
+  background-color: orange;
+  padding: 15px 32px;
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+.circle {
+  /* Applies a circle around an asset*/
+  background-color: transparent;
+  border: 1px solid purple;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+/* Breakpoint for screens larger than 768px*/
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    height: 4em;
+    padding-left: 3em;
+    padding-top: 5em;
+  }
+
+  .welcome {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    font-size: 2em;
+  }
+
+  .brand {
+    color: white;
+    letter-spacing: 0.25em;
+    font-size: 1.5em;
+  }
+
+  .heroBtn {
+    margin-top: 1.5em;
+    background-color: #ac5fd1;
+  }
+
+  .learnImg {
+    display: flex;
+    flex: 1;
+  }
+
+  .bannerOneComponents {
+    position: absolute;
+    right: 75%;
+  }
+
+  .bannerTwoComponents {
+    width: 25%;
+    position: absolute;
+    left: 55%;
+  }
+
+  .homeContainer {
+    display: inherit;
+    flex-wrap: nowrap;
+  }
+
+  .homeInfo {
+    flex: 1;
+    display: flex;
+    padding-left: 2em;
+    padding-right: 1.5em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homeImages {
+    flex: 1;
+    background-color: #fafafa;
+  }
+  .homeList {
+    display: grid;
+    grid-template: 5em / repeat(2, 1.5fr);
+    grid-gap: 0.55em;
+    grid-row-gap: 0.15em;
+    list-style-type: none;
+    background: #fafafa;
+  }
+
+  .reviewContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mainReview {
+    flex: 1;
+  }
+
+  .reviewCarousel {
+    display: flex;
+    flex: 1;
+    height: 150px;
+    padding-top: 200px;
+    width: 200px;
+  }
+
+  .reviewName {
+    place-content: center;
+  }
+
+  .reviewCarousel p {
+    margin-top: -170px;
+    text-align: center;
+    min-width: 200px;
+  }
+
+  .rightArrow {
+    position: absolute;
+    font-size: 55px;
+    z-index: 5;
+    cursor: pointer;
+    left: 95%;
+  }
+
+  .leftArrow {
+    position: absolute;
+    font-size: 55px;
+    left: 55%;
+    z-index: 5;
+    cursor: pointer;
+  }
 }
