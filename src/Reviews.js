@@ -49,7 +49,7 @@ const Reviews = () => {
   };
 
   const nextReview = () => {
-    setActive(active === length - 1 ? 1 : active + 1);
+    setActive(active === length - 1 ? 0 : active + 1);
   };
 
   const handleSetClick = (event) => {
