@@ -6,59 +6,55 @@ import {
   RiStarFill,
 } from "react-icons/ri";
 
-const reviews = {
-  0: {
+const reviews = [
+  {
     name: "Dave Smith",
     date: "11/12/2020",
     review:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id sapiente, maiores sunt eligendi natus exercitationem corrupti deserunt, fugit quasi tenetur temporibus excepturi praesentium delectus maxime harum dicta mollitia cum.",
   },
-  1: {
+  {
     name: "Anakin Skywalker",
     date: "3/12/2020",
     review:
       "Fugit quasi tenetur temporibus excepturi praesentium delectus maxime harum dicta mollitia cum.",
   },
-
-  2: {
+  {
     name: "Obi Wan",
     date: "4/12/2020",
     review:
       "Natus exercitationem corrupti deserunt, fugit quasi tenetur temporibus excepturi praesentium delectus maxime harum dicta mollitia cum.",
   },
-  3: {
+  {
     name: "George Lucas",
     date: "3/12/2020",
     review:
       "Unde id sapiente, maiores sunt eligendi natus exercitationem corrupti deserunt, fugit quasi tenetur temporibus excepturi praesentium delectus maxime harum dicta mollitia cum.",
   },
-  4: {
+  {
     name: "Leeroy Jekins",
     date: "11/12/2020",
     review:
       "Lorem ipsum dolor sit amet consectetur eligendi natus exercitationem corrupti deserunt, fugit quasi tenetur temporibus excepturi praesentium delectus maxime harum dicta mollitia cum.",
   },
-};
+];
 
 const Reviews = () => {
   const [active, setActive] = useState(0);
   const [review, setReview] = useState(reviews[0]);
+  const length = reviews.length;
 
   const prevReview = () => {
-    setActive(active === 5 - 1 ? 0 : active + 1);
-    console.log(active);
+    setActive(active === 0 ? length - 1 : active - 1);
   };
 
   const nextReview = () => {
-    setActive(active === 0 ? 5 - 1 : active - 1);
-    console.log(active);
+    setActive(active === length - 1 ? 1 : active + 1);
   };
 
   const handleSetClick = (event) => {
-    setReview(reviews[event.target.getAttribute("data-review")]);
-    console.log(reviews[event.target.getAttribute("data-review")]);
-    setActive(event.target.getAttribute("data-review"));
-    console.log(event.target.getAttribute("data-review"));
+    setReview(reviews[parseInt(event.target.getAttribute("data-review"))]);
+    setActive(parseInt(event.target.getAttribute("data-review")));
   };
 
   return (
